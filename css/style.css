@@ -1,0 +1,91 @@
+:root {
+    --dark-color: rgba(0, 68, 11, 0.4);
+    --medium-color: rgba(255, 255, 255, 0.8);
+    --light-color: rgba(0, 184, 9, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    padding: 2rem;
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to bottom right, var(--light-color), var(--dark-color)), url("../img/landscape.jpg");
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 89%);
+    color: var(--medium-color);
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 5rem;
+    letter-spacing: 1.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {transform: translateX(-100px); opacity: 0;}
+    80% {transform: translateX(20px);}
+    100% {transform: translateX(0); opacity: 1;}
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 0.6rem;
+    animation-name: moveInRight;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes moveInRight {
+    0% {transform: translateX(100px); opacity: 0;}
+    80% {transform: translateX(-10px);}
+    100% {transform: translateX(0); opacity: 1;}
+}
+
+.btn {
+    display: block;
+    color: var(--medium-color);
+    text-decoration: none;
+    border: 2px solid var(--light-color);
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    opacity: 0;
+    margin: 10rem;
+    animation-name: btnAnim;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btnAnim {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.btn:hover {
+    color: wheat;
+}
